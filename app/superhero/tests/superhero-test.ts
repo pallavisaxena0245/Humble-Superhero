@@ -47,7 +47,7 @@ describe("Superhero API Endpoints", () => {
 
   describe("POST /superhero", () => {
     // Helper to create a fake Request object with a formData() method.
-    const createFakeRequest = (formDataValues: Record<string, any>): Request => ({
+    const createFakeRequest = (formDataValues: Record<string, FormDataEntryValue>): Request => ({
       async formData() {
         return { get: (key: string) => formDataValues[key] };
       },
@@ -58,11 +58,15 @@ describe("Superhero API Endpoints", () => {
       const fakeFile = {
         name: "image.png",
         type: "image/png",
+        size: 3, // Dummy size
+        lastModified: Date.now(),
+        webkitRelativePath: "",
         async arrayBuffer() {
           return new Uint8Array([1, 2, 3]).buffer;
         },
-      };
-
+      } as unknown as File;
+      
+      
       // Omitting the "name" field.
       const req = createFakeRequest({
         superpower: "Flying",
