@@ -1,31 +1,7 @@
 import NextAuth from "next-auth";
-import GoogleProvider from "next-auth/providers/google";
-
-export const authOptions = {
-  providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-      authorization: {
-        params: {
-          prompt: "select_account",
-          access_type: "offline",
-          response_type: "code",
-        },
-      },
-    }),
-  ],
-  callbacks: {
-    async session({ session, token }) {
-      session.user.id = token.sub;
-      return session;
-    },
-  },
-  secret: process.env.NEXTAUTH_SECRET,
-  pages: {
-    signIn: "/", // This will load your custom sign in page at the root
-  },
-};
+import { authOptions } from "@/lib/authOptions"; // Adjust the import path as needed
 
 const handler = NextAuth(authOptions);
+
+// Export only the valid HTTP method handlers
 export { handler as GET, handler as POST };
