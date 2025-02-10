@@ -36,6 +36,7 @@ export default function Leaderboard() {
               <tr className="bg-white/20 text-yellow-300 text-lg">
                 <th className="p-4 text-left">Rank</th>
                 <th className="p-4 text-left">Hero</th>
+                <th className="p-4 text-left">Strength</th>
                 <th className="p-4 text-left">Humility Score</th>
               </tr>
             </thead>
@@ -51,6 +52,7 @@ export default function Leaderboard() {
                     />
                     <span>{hero.name}</span>
                   </td>
+                  <td className="p-4">{hero.superpower}</td>
                   <td className="p-4">{hero.humility}</td>
                 </tr>
               ))}
