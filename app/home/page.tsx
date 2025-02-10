@@ -28,7 +28,7 @@ export default function Home() {
 
         if (isMounted) setSuperhero({ name: data.name, image: data.images.md, fact: randomFact });
       } catch (error) {
-        // console.error("Error fetching superhero:", error);
+        console.log(error);
       }
     };
 
