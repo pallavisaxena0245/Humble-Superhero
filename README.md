@@ -73,7 +73,7 @@ npm run dev
 
 
 ## System Design Considerations
---- add system design diagram this is the link https://pub-8e08087028fb4eb9b469a0853f7a9fc6.r2.dev/Readme_img/system-design.png
+---  ![System desin](https://pub-8e08087028fb4eb9b469a0853f7a9fc6.r2.dev/Readme_img/system-design.png)
 
 ### CIA Model
 
