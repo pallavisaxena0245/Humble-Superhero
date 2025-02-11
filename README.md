@@ -45,6 +45,7 @@ npm install
 Add all the environment variable
 ```python
 # Cloudflare R2 Credentials
+
 NEXT_PUBLIC_CF_R2_BUCKET_NAME=superhero
 NEXT_PUBLIC_CF_R2_ENDPOINT=https://your-r2-endpoint.r2.cloudflarestorage.com
 NEXT_PUBLIC_CF_R2_ACCESS_KEY_ID=your_access_key_id
@@ -60,6 +61,7 @@ NEXT_PUBLIC_NEXTAUTH_SECRET=your_NEXT_PUBLIC_NEXTAUTH_SECRET
 # Google OAuth Credentials
 NEXT_PUBLIC_GOOGLE_CLIENT_ID=your_NEXT_PUBLIC_GOOGLE_CLIENT_ID
 NEXT_PUBLIC_GOOGLE_CLIENT_SECRET=your_NEXT_PUBLIC_GOOGLE_CLIENT_SECRET
+
 ```
 Build the environment(Optional)
 ```bash
@@ -73,7 +75,9 @@ npm run dev
 
 
 ## System Design Considerations
---- add system design diagram this is the link https://pub-8e08087028fb4eb9b469a0853f7a9fc6.r2.dev/Readme_img/system-design.png
+
+---  ![System desin](https://pub-8e08087028fb4eb9b469a0853f7a9fc6.r2.dev/Readme_img/system-design.png)
+
 
 ### CIA Model
 
@@ -185,4 +189,6 @@ To expand and improve this project, we can effectively divide responsibilities b
    ![Add Superhero](https://pub-8e08087028fb4eb9b469a0853f7a9fc6.r2.dev/Readme_img/add_superhero.png)  
    ![Superhero Added](https://pub-8e08087028fb4eb9b469a0853f7a9fc6.r2.dev/Readme_img/superhero_added.png)
 
----
+
+=======
+
