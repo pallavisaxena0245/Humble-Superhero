@@ -36,11 +36,11 @@ export async function GET() {
 
 // Configure the S3 client to connect to Cloudflare R2
 const s3 = new S3Client({
-  endpoint: process.env.CF_R2_ENDPOINT, 
+  endpoint: process.env.NEXT_PUBLIC_CF_R2_ENDPOINT, 
   region: "auto", 
   credentials: {
-    accessKeyId: process.env.CF_R2_ACCESS_KEY_ID || "",
-    secretAccessKey: process.env.CF_R2_SECRET_ACCESS_KEY || "",
+    accessKeyId: process.env.NEXT_PUBLIC_CF_R2_ACCESS_KEY_ID || "",
+    secretAccessKey: process.env.NEXT_PUBLIC_CF_R2_SECRET_ACCESS_KEY || "",
   },
 });
 
@@ -97,7 +97,7 @@ export async function POST(req: Request) {
     
       // Upload the file to Cloudflare R2
       const putCommand = new PutObjectCommand({
-        Bucket: process.env.CF_R2_BUCKET_NAME, // e.g., "superhero"
+        Bucket: process.env.NEXT_PUBLIC_CF_R2_BUCKET_NAME, // e.g., "superhero"
         Key: fileKey,
         Body: fileBuffer,
         ContentType: file.type,
@@ -105,7 +105,7 @@ export async function POST(req: Request) {
       await s3.send(putCommand);
     
       // Construct the public URL for the uploaded image
-      const imageUrl = `${process.env.CF_R2_UPLOAD_URL}/${fileKey}`;
+      const imageUrl = `${process.env.NEXT_PUBLIC_CF_R2_UPLOAD_URL}/${fileKey}`;
     
       // Create a new superhero object with the incremental id and image URL
       const newSuperhero: Superhero = {
@@ -190,17 +190,17 @@ export async function POST(req: Request) {
 
       // Configure the S3 client to connect to Cloudflare R2
       const s3 = new S3Client({
-        endpoint: process.env.CF_R2_ENDPOINT,
+        endpoint: process.env.NEXT_PUBLIC_CF_R2_ENDPOINT,
         region: "auto",
         credentials: {
-          accessKeyId: process.env.CF_R2_ACCESS_KEY_ID || "",
-          secretAccessKey: process.env.CF_R2_SECRET_ACCESS_KEY || "",
+          accessKeyId: process.env.NEXT_PUBLIC_CF_R2_ACCESS_KEY_ID || "",
+          secretAccessKey: process.env.NEXT_PUBLIC_CF_R2_SECRET_ACCESS_KEY || "",
         },
       });
 
       // Upload the file to Cloudflare R2
       const putCommand = new PutObjectCommand({
-        Bucket: process.env.CF_R2_BUCKET_NAME, // e.g., "superhero"
+        Bucket: process.env.NEXT_PUBLIC_CF_R2_BUCKET_NAME, // e.g., "superhero"
         Key: fileKey,
         Body: fileBuffer,
         ContentType: file.type,
@@ -208,7 +208,7 @@ export async function POST(req: Request) {
       await s3.send(putCommand);
 
       // Construct the public URL for the uploaded image
-      const imageUrl = `${process.env.CF_R2_UPLOAD_URL}/${fileKey}`;
+      const imageUrl = `${process.env.NEXT_PUBLIC_CF_R2_UPLOAD_URL}/${fileKey}`;
 
       // Create a new superhero object with the incremental id and image URL
       const newSuperhero: Superhero = {
